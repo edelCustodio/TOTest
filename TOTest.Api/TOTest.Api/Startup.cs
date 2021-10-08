@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TOTest.Api.Infraestructure;
+using TOTest.Api.Services;
 
 namespace TOTest.Api
 {
@@ -26,6 +28,11 @@ namespace TOTest.Api
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+			services.AddMemoryCache();
+
+			services.AddHttpClient();
+			services.AddScoped<IImageService, ImageService>();
+			services.AddScoped<IHttpClient, HttpClient>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
