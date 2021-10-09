@@ -1,1 +1,5 @@
-<p>gallery works!</p>
+<div style="width: 1000px; height: 700px;">
+    <ng-container *ngIf="images$ | async as images">
+        <img *ngFor="let image of getImagesFromArray(images)" height="200" width="200" [lazyLoad]="image" [defaultImage]="defaultImage">
+    </ng-container>
+</div>

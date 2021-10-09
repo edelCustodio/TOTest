@@ -12,5 +12,6 @@ namespace TOTest.Api.Models
 		public int ListingID { get; set; }
 		public string Company { get; set; }
 		public string Image_List { get; set; }
+		public string[] Image_List_Array { get; set; }
 	}
 }

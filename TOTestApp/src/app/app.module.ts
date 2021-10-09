@@ -8,6 +8,7 @@ import { APP_CONFIG } from 'src/config/app.config';
 import { environment } from 'src/environments/environment';
 import { ODataConfiguration, ODataServiceFactory } from 'angular-odata-es5';
 import { ODataConfig } from './odata-config';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ODataConfig } from './odata-config';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     GalleryModule
   ],
   providers: [

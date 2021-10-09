@@ -1,5 +1,6 @@
 export interface IImage {
-    ListingID: number;
-    Company: string;
-    Image_List: string;
+    listingID: number;
+    company: string;
+    image_List: string;
+    image_List_Array: string[];
 }

@@ -52,8 +52,8 @@ namespace TOTest.Api.Controllers.odata
 
 		private IEnumerable<ImageViewModel> DuplicateData(IEnumerable<ImageViewModel> imageViewModels)
 		{
-			var duplicatedList1 = imageViewModels.Select(s => new ImageViewModel { Company = $"{s.Company} 1", Image_List = s.Image_List, ListingID = s.ListingID }).ToList();
-			var duplicatedList2 = imageViewModels.Select(s => new ImageViewModel { Company = $"{s.Company} 2", Image_List = s.Image_List, ListingID = s.ListingID }).ToList();
+			var duplicatedList1 = imageViewModels.Select(s => new ImageViewModel { Company = $"{s.Company} 1", Image_List_Array = s.Image_List != null ? s.Image_List.Split('|') : new string[] { }, ListingID = s.ListingID }).ToList();
+			var duplicatedList2 = imageViewModels.Select(s => new ImageViewModel { Company = $"{s.Company} 2", Image_List_Array = s.Image_List != null ? s.Image_List.Split('|') : new string[] { }, ListingID = s.ListingID }).ToList();
 
 			duplicatedList1.AddRange(duplicatedList2);
 
