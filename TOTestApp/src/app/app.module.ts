@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GalleryModule } from './gallery/gallery.module';
+import { APP_CONFIG } from 'src/config/app.config';
+import { environment } from 'src/environments/environment';
+import { ODataConfiguration, ODataServiceFactory } from 'angular-odata-es5';
+import { ODataConfig } from './odata-config';
 
 @NgModule({
   declarations: [
@@ -10,9 +15,20 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GalleryModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_CONFIG,
+      useValue: environment.configuration
+    },
+    ODataServiceFactory,
+    {
+      provide: ODataConfiguration,
+      useClass: ODataConfig
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

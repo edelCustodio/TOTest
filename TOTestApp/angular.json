@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "to",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -65,7 +65,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TOTestApp:build"
+            "browserTarget": "TOTestApp:build",
+            "proxyConfig": "proxy.conf.js"
           },
           "configurations": {
             "production": {
